@@ -4,7 +4,7 @@
       tag="a"
       class="tr-lasts-posts"
       :fontData="fontData"
-      :to="{name: 'post', params: {category: `${fontData.slugCategory}`, post: `${fontData.slug}` } }"
+      :to="{name: 'category-slug', params: {category: fontData.slugCategory, slug: fontData.slug  } }"
     >
       <div>
         <p class="retract-lasts-posts mt-0 mb-0">{{fontData.retracts}}</p>

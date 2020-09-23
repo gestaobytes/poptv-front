@@ -3,7 +3,7 @@
     tag="a"
     class="tr-lasts-posts"
     :fontData="fontData"
-    :to="{name: 'post', params: {category: `${fontData.slugCategory}`, post: `${fontData.slug}` } }"
+    :to="{name: 'category-slug', params: {category: fontData.slugCategory, slug: fontData.slug  } }"
   >
     <div style="background:">
       <div class="image-home mb-3">

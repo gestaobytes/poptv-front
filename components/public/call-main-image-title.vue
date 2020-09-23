@@ -1,10 +1,9 @@
 <template>
   <v-lazy :v-model="lazyData" :options="{threshold: .8}" transition="fade-transition">
-    <router-link
-      tag="a"
+    <nuxt-link
       class="tr-lasts-posts"
       :fontData="fontData"
-      :to="{name: 'post', params: {category: `${fontData.slugCategory}`, post: `${fontData.slug}` } }"
+      :to="{name: 'category-slug', params: {category: fontData.slugCategory, slug: fontData.slug  } }"
     >
       <v-card>
         <v-img
@@ -35,7 +34,7 @@
           <v-card-title>{{fontData.titleadapter}}</v-card-title>
         </v-img>
       </v-card>
-    </router-link>
+    </nuxt-link>
   </v-lazy>
 </template>
 
@@ -45,7 +44,7 @@ export default {
   props: ["fontData", "lazyData"],
   data: function () {
     return {
-      storageGoogle:"https://storage.googleapis.com/ogirassol/",
+      storageGoogle: "https://storage.googleapis.com/ogirassol/",
       photo: "photos/",
       thumb: "thumbs/",
     };

@@ -4,7 +4,7 @@
       <router-link
         tag="a"
         class="tl-link"
-        :to="{name: 'post', params: {category: `${fontData.slugCategory}`, post: `${fontData.slug}` } }"
+        :to="{name: 'category-slug', params: {category: fontData.slugCategory, slug: fontData.slug  } }"
       >
         <tr>
           <td>
