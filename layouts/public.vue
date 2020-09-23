@@ -44,7 +44,7 @@
             <v-tabs show-arrows>
               <v-tabs-slider></v-tabs-slider>
               <v-tab router to="/giralogin">.</v-tab>
-              <v-tab router to="/">Home</v-tab>
+              <v-tab router to="index">Home</v-tab>
               <!-- <v-tab
                 v-for="(item, i) in menuCategories"
                 :key="i"
@@ -77,7 +77,7 @@
             </form>
 
             <v-list-item-group color="primary">
-              <router-link tag="a" class="tr-lasts-posts" :to="{name: 'home' }">
+              <router-link tag="a" class="tr-lasts-posts" :to="{name: 'index' }">
                 <v-list-item>Home</v-list-item>
               </router-link>
               <router-link
@@ -94,13 +94,13 @@
         </v-row>
       </v-navigation-drawer>
 
-      <v-content>
+      <v-main>
         <v-row>
           <v-col cols="12">
             <nuxt />
           </v-col>
         </v-row>
-      </v-content>
+      </v-main>
 
       <v-footer style="background-color: #a80017">
         <v-row>
