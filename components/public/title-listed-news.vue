@@ -4,7 +4,7 @@
         <router-link
           tag="a"
           class="tr-lasts-posts pt-3"
-          :to="{name: 'post', params: {category: `${lastest.slugCategory}`, post: `${lastest.slug}` } }"
+          :to="{name: 'category-slug', params: {category: `${lastest.slugCategory}`, slug: `${lastest.slug}` } }"
         >
           <tr>
             <td width="98%">

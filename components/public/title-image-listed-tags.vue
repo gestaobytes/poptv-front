@@ -9,7 +9,7 @@
       <router-link
         tag="a"
         style="text-decoration:none"
-        :to="{name: 'post', params: {category: `${lastest.slugCategory}`, post: `${lastest.slug}` } }"
+        :to="{name: 'category-slug', params: {category: `${lastest.slugCategory}`, slug: `${lastest.slug}` } }"
       >
         <td
           style="display: table-cell; vertical-align:top;"
