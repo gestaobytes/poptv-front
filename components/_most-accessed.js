@@ -4,7 +4,6 @@ import { baseApiUrlPublic } from '@/global'
 export default {
   data: function () {
     return {
-      api: 'http://poptvnews.local/api/v1/public',
       mostAccessedDay: [],
       mostAccessedWeek: [],
     };
