@@ -117,6 +117,16 @@ export default {
             allPosts108: "",
             allPosts109: "",
             allPosts110: "",
+            allPosts111: "",
+            allPosts112: "",
+            allPosts113: "",
+            allPosts114: "",
+            allPosts115: "",
+            allPosts116: "",
+            allPosts117: "",
+            allPosts118: "",
+            allPosts119: "",
+            allPosts120: "",
             /** */
             postsHighlight: [],
             postsHighlight01: "",
@@ -339,6 +349,16 @@ export default {
                         this.allPosts108 = res.data.length > 107 ? this.allPosts[107] : "";
                         this.allPosts109 = res.data.length > 108 ? this.allPosts[108] : "";
                         this.allPosts110 = res.data.length > 109 ? this.allPosts[109] : "";
+                        this.allPosts111 = res.data.length > 110 ? this.allPosts[110] : "";
+                        this.allPosts112 = res.data.length > 111 ? this.allPosts[111] : "";
+                        this.allPosts113 = res.data.length > 112 ? this.allPosts[112] : "";
+                        this.allPosts114 = res.data.length > 113 ? this.allPosts[113] : "";
+                        this.allPosts115 = res.data.length > 114 ? this.allPosts[114] : "";
+                        this.allPosts116 = res.data.length > 115 ? this.allPosts[115] : "";
+                        this.allPosts117 = res.data.length > 116 ? this.allPosts[116] : "";
+                        this.allPosts118 = res.data.length > 117 ? this.allPosts[117] : "";
+                        this.allPosts119 = res.data.length > 118 ? this.allPosts[118] : "";
+                        this.allPosts120 = res.data.length > 119 ? this.allPosts[119] : "";
                     }
                 })
                 .catch(function (error) {
