@@ -104,7 +104,7 @@
 
       <v-footer style="background-color: #a80017">
         <v-row>
-          <v-col cols="12">
+          <v-col cols="12" xl="12">
             <v-layout class="container">
               <v-row>
                 <v-col
@@ -160,6 +160,18 @@
                   >
                     <v-icon small class="mt-0">fab fa-twitter</v-icon>
                   </v-btn>
+                </v-col>
+              </v-row>
+            </v-layout>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" xl="12">
+            <v-layout class="container">
+              <v-row>
+                <v-col cols="12" xl="12">
+                  Os artigos e/ou assinadas, não representam necessariamente, a opinião do site e são de responsabilidade 
+                  de seus autores (sem vínculos empregatícios e nem da cumpriedade de horário de trabalho).
                 </v-col>
               </v-row>
             </v-layout>
