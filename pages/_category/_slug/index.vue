@@ -315,23 +315,26 @@ export default {
 
   head() {
     return {
-      title: this.article.subtitle,
+      title: this.article.title,
       meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "My custom description"
-        }
+        { hid: 'description', name: 'description', content: this.article.subtitle },
+        { hid: 'keywords', name: 'keywords', content: this.article.tags },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.article.titleadapter },
+        { hid: 'og:url', name: 'og:url', content: this.urlComplete },
+        { hid: 'twitter:url', name: 'twitter:url', content: this.urlComplete },
+        { hid: 'og:title', name: 'og:title', content: this.article.titleadapter },
+        { hid: 'og:description', name: 'og:description', content: this.article.subtitle },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.article.subtitle },
+        { hid: 'article:tag', name: 'article:tag', content: this.article.tags },
+        { hid: 'og:image', name: 'og:image', content: this.photo + '/' + this.article.image },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.photo + '/' + this.article.tags }
       ]
     };
   },
 
   methods: {
     loadPost() {
-      axios
-        .get(
-          `${baseApiUrlPublic}/${this.$route.params.category}/${this.$route.params.slug}`
-        )
+      axios.get(`${baseApiUrlPublic}/${this.$route.params.category}/${this.$route.params.slug}`)
         .then(res => {
           this.article = res.data.article;
           var tags = res.data.tags;
