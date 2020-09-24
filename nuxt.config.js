@@ -10,7 +10,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
       { name: 'author', content: 'Gestão Bytes | MACEDO, Gerisvaldo' },
       { name: 'robots', content: 'index,follow' },
-      
+
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:site', content: '@ogirassol' },
       { property: 'twitter:creator', content: '@ogirassol' },
@@ -25,7 +25,7 @@ export default {
       { property: 'og:locale', content: 'pt_BR' },
       { property: 'og:site_name', content: 'POPTVNEWS' },
       { property: 'og:type', content: 'article' },
-      
+
       { hid: 'description', name: 'description', content: '' },
       { hid: 'keywords', name: 'keywords', content: '' },
       { hid: 'twitter:title', name: 'twitter:title', content: '' },
@@ -40,9 +40,9 @@ export default {
     ],
 
 
-    
+
   // <link rel='canonical' href='<%= htmlWebpackPlugin.options.canonical %>' />
-  
+
 
 
 
@@ -81,6 +81,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/axios',
+    // '@nuxtjs/auth'
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
