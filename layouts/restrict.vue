@@ -61,7 +61,7 @@
               <v-tab router :to="{name: 'admin-blogs'}"><span>Blogs e Colunas</span> </v-tab>
               <v-tab router :to="{name: 'admin-positions'}"><span>Posições</span> </v-tab>
               <v-tab router :to="{name: 'admin-posts'}"><span>Posts</span> </v-tab>
-              <v-tab router :to="{name: 'admin-position-banners'}"><span>Posição Anúncios</span> </v-tab>
+              <v-tab router :to="{name: 'admin-positionbanners'}"><span>Posição Anúncios</span> </v-tab>
               <v-tab router :to="{name: 'admin-banners'}"><span>Anúncios</span> </v-tab>
               <v-tab router :to="{name: 'admin-columners'}"><span>Colunistas</span> </v-tab>
               <v-tab router :to="{name: 'admin-reactions'}"><span>Reações</span> </v-tab>
