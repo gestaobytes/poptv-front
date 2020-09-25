@@ -1,40 +1,40 @@
 <template>
   <div style="width: 100%">
-    <!-- cabeçalho com titulo e pesquisa -->
+   <!-- cabeçalho com titulo e pesquisa -->
     <title-page-search :titlePage="titlePage" @clickSubmit="submitFS()" nameFS="q" />
-    <button-add @add="reset(), dialog = !dialog"></button-add>
+    <button-add @add="reset(), dialog = !dialog" />
 
     <!-- exibição dos dados em tabela -->
     <custom-table :headTH="tableHead" :registers="registersOfTable">
       <tr v-for="data in registersOfTable" :key="data.id" slot="registers-table">
-        <td>
-          <b>{{data.category}}</b>
-          | {{ data.title }}
-        </td>
+        <td><b>{{data.category}}</b> | {{ data.title }}</td>
         <td width="120px" class="text-right">
           <button-delete @delete="remove(data)" />
+          <br v-if="$vuetify.breakpoint.xs" />
           <button-edit @save="loadRegisterSelect(data),dialog = !dialog" />
         </td>
       </tr>
     </custom-table>
 
-    <!-- formulário com os campos de cadastro -->
+
+
     <v-layout row justify-center>
       <v-dialog v-model="dialog" persistent>
         <modal-light :title="titleModal" @close="dialog = false" @save="save">
           <v-row slot="contentForm">
-            <v-col cols="12" xs="12" sm="4" md="3" lg="3" xl="3">
+            <v-col cols="12" xs="12" sm="6" md="3" lg="3" xl="3">
               <select-autocomplete-form
                 label="Editoria*"
                 v-model="dataOfTable.category_id"
                 :itemsData="categories"
                 @clickAppend="reset(), dialogCategory = !dialogCategory"
               />
+              <!-- @click:append="reset(), dialogCategory = !dialogCategory" -->
             </v-col>
-            <v-col cols="12" xs="12" sm="3" md="3" lg="3" xl="3">
+            <v-col cols="12" xs="12" sm="6" md="3" lg="3" xl="3">
               <text-field-form label="Subeditoria*" v-model="dataOfTable.title" />
             </v-col>
-            <v-col cols="12" xs="12" sm="5" md="6" lg="6" xl="6">
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
               <text-field-form label="Descrição*" v-model="dataOfTable.description" />
             </v-col>
           </v-row>
@@ -42,9 +42,12 @@
       </v-dialog>
 
       <v-dialog v-model="dialogCategory" persistent dark width="90%">
-        <modal-light title="CADASTRAR CATEGORIA|EDITORIA" @close="dialogCategory = false" @save="saveCategory">
+        <modal-light
+          title="CADASTRAR CATEGORIA|EDITORIA"
+          @close="dialogCategory = false"
+          @save="saveCategory"
+        >
           <v-row slot="contentForm">
-
             <v-col cols="12" xs="12" sm="3" md="3" lg="3" xl="3">
               <select-field-form label="Tipo*" v-model="dataOfTable.type" :itemsData="type" />
             </v-col>
@@ -58,10 +61,18 @@
               <text-field-form label="CorFonte*" v-model="dataOfTable.colorsourcetop" />
             </v-col>
             <v-col cols="12" xs="12" sm="3" md="3" lg="3" xl="3">
-              <select-field-form label="Link Topo" v-model="dataOfTable.linktop" :itemsData="linktop" />
+              <select-field-form
+                label="Link Topo"
+                v-model="dataOfTable.linktop"
+                :itemsData="linktop"
+              />
             </v-col>
             <v-col cols="12" xs="12" sm="3" md="3" lg="3" xl="3">
-              <select-field-form label="Link Rodapé" v-model="dataOfTable.linkfooter" :itemsData="linkfooter" />
+              <select-field-form
+                label="Link Rodapé"
+                v-model="dataOfTable.linkfooter"
+                :itemsData="linkfooter"
+              />
             </v-col>
 
             <v-col cols="12" xs="12" sm="6" md="6" lg="6" xl="6">
@@ -73,15 +84,9 @@
     </v-layout>
 
     <div class="text-xs-center mt-5">
-      <v-pagination
-        color="cyan"
-        v-if="paginate > 1"
-        v-model="page"
-        :length="paginate"
-        :total-visible="7"
-        circle
-      ></v-pagination>
+      <v-pagination color="cyan" v-if="paginate > 1" v-model="page" :length="paginate" :total-visible="7" circle />
     </div>
+
   </div>
 </template>
 
@@ -122,13 +127,19 @@ export default {
 
   data: function () {
     return {
-      pageApi: "blogs",
+      pageApi: "subcategories",
       pageApiCategories: "categories",
-      titleModal: "CADASTRAR BLOGS E COLUNAS",
-      titlePage: "BLOGS E COLUNAS",
+      titleModal: "CADASTRAR SUBEDITORIAS",
+      titlePage: "SUBEDITORIAS",
       categories: [],
-      dialogCategory: false,
+      headers: [
+        { text: "ID", value: "id", sortable: false },
+        { text: "CATEGORIA", value: "title", sortable: false },
+        { text: "", value: "", sortable: false },
+      ],
       tableHead: ["DESCRIÇÃO"],
+
+      dialogCategory: false,
       type: [
         { value: "E", text: "EDITORIA" },
         { value: "P", text: "PÁGINA" },
@@ -191,7 +202,7 @@ export default {
     },
 
     reset() {
-      this.titleModal = "CADASTRAR BLOGS E COLUNAS";
+      this.titleModal = "CADASTRAR SUBEDITORIAS";
       // this.$refs.form.reset();
       this.dataOfTable = {};
       this.loadRegistersOfTable();
