@@ -41,7 +41,7 @@ export default {
 
 
 
-  // <link rel='canonical' href='<%= htmlWebpackPlugin.options.canonical %>' />
+    // <link rel='canonical' href='<%= htmlWebpackPlugin.options.canonical %>' />
 
 
 
@@ -81,6 +81,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/axios',
+    'vue-sweetalert2/nuxt'
     // '@nuxtjs/auth'
   ],
 
