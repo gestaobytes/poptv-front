@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <v-app>
-      <!-- <Loading v-if="validatingToken" /> -->
-      <!-- <div v-else id="inspire"> -->
-      <div>
+      <Loading v-if="validatingToken" />
+      <div v-else id="inspire">
+      <!-- <div > -->
         <v-card>
           <v-app-bar dark dense>
             <v-toolbar-title>
               <a router to="dashboard">
-                <!-- <img src="@/static/img/iconGB.svg" alt="GestãoBytes" /> -->
+                <img src="@/static/iconGB.svg" alt="GestãoBytes" />
               </a>
-              <!-- <img src="@/static/img/gestaoBytes.svg" alt="Gestão Bytes" /> -->
+              <img src="@/static/gestaoBytes.svg" alt="Gestão Bytes" />
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-menu v-if="user" left bottom>
@@ -65,23 +65,79 @@
               <v-tab router :to="{name: 'admin-banners'}"><span>Anúncios</span> </v-tab>
               <v-tab router :to="{name: 'admin-columners'}"><span>Colunistas</span> </v-tab>
               <v-tab router :to="{name: 'admin-reactions'}"><span>Reações</span> </v-tab>
+              <v-tab @click.prevent="logout" >Logout</v-tab>
+              <v-tab >{{nameUser}}</v-tab>
             </v-tabs>
           </v-app-bar>
         </v-card>
-        <v-content>
+        <v-main>
           <v-container fluid fill-height>
             <v-layout>
               <router-view />
             </v-layout>
           </v-container>
-        </v-content>
+        </v-main>
       </div>
     </v-app>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import { baseApiUrl, userKey } from "@/global";
+import Loading from "@/components/admin/design/loading";
+import { mapState } from "vuex";
+
 export default {
+  components: { Loading },
+  computed: mapState(["user"]),
+  data: function() {
+    return {
+      nameUser: '',
+      imageUser: '',
+      validatingToken: true,
+      permissionsOfUser: {}
+    };
+  },
+
+  methods: {
+    async validateToken() {
+      this.validatingToken = true;
+
+      const json = localStorage.getItem(userKey);
+      const userData = JSON.parse(json);
+      this.$store.commit("setUser", null);
+
+      if (!userData) {
+        this.validatingToken = false;
+        return this.$router.push({ name: "login" });
+      }
+
+      const res = await axios.post(`${baseApiUrl}/auth/validateToken`, userData);
+
+      if (res) {
+        this.$store.commit("setUser", userData);
+        this.permissionsOfUser = userData.permissions;
+        this.imageUser = userData.user.image;
+        this.nameUser = userData.user.name;
+      } else {
+        localStorage.removeItem(userKey);
+        this.$router.push({ name: "login" });
+      }
+
+      this.validatingToken = false;
+    },
+
+    logout() {
+      localStorage.removeItem(userKey);
+      this.$router.push({ name: "login" });
+      this.$store.commit("setUser", null);
+    }
+  },
+  created(){
+    this.validateToken();
+  },
+  mounted() {
+  }
 };
 </script>
-<style>
