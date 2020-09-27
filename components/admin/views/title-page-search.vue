@@ -88,7 +88,7 @@
                       @click="$emit('clickSubmit')"
                       v-if="$vuetify.breakpoint.md"
                     >
-                      <v-icon class="mt-0" small>fa fa-search</v-icon>
+                      <v-icon class="mt-0" small>mdi-plus-circle</v-icon>
                     </v-btn>
                     <v-btn
                       class="mt-n2 py-5"

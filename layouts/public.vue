@@ -22,7 +22,8 @@
                   color="white"
                   class="ml-2"
                 >
-                  <v-icon small class="mt-0">fab fa-facebook-f</v-icon>
+                  <!-- <v-icon class="ml-2"></v-icon> -->
+                  <v-icon class="mt-0">mdi-facebook</v-icon>
                 </v-btn>
                 <v-btn
                   href="https://twitter.com/poptvnews"
@@ -32,7 +33,7 @@
                   color="white"
                   class="ml-2"
                 >
-                  <v-icon small class="mt-0">fab fa-twitter</v-icon>
+                  <v-icon small class="mt-0">mdi-twitter</v-icon>
                 </v-btn>
               </div>
             </v-layout>
