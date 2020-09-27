@@ -19,4 +19,3 @@ export function showError(e) {
 }
 
 export default { domainApi, baseApiUrl, baseApiUrlWithVersion, baseApiUrlAdmin, baseApiUrlPublic, showError, userKey }
-

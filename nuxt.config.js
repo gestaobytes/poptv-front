@@ -1,9 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s | POPTVNEWS',
+    titleTemplate: '%s POPTVNEWS',
     title: '',
     meta: [
       { charset: 'utf-8' },
@@ -38,54 +37,82 @@ export default {
       { hid: 'og:image', name: 'og:image', content: '' },
       { hid: 'twitter:image', name: 'twitter:image', content: '' }
     ],
-
-
-
     // <link rel='canonical' href='<%= htmlWebpackPlugin.options.canonical %>' />
-
-
-
-
-
-
-
-
-
-
-
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/styles/main.css'
   ],
 
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    "./plugins/axios.js"
+    // "./plugins/mixins/user.js",
+    // "./plugins/mixins/validation.js"
   ],
 
-  // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
-  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/fontawesome'
   ],
 
-  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/axios',
-    'vue-sweetalert2/nuxt'
-    // '@nuxtjs/auth'
+    // '@nuxtjs/auth',
+    'vue-sweetalert2/nuxt',
+    '@nuxtjs/toast',
+    '@nuxtjs/fontawesome',
+    'nuxt-material-design-icons'
   ],
 
-  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
+
+  // axios: {
+  //   baseURL: 'http://poptvnews.local/api'
+  // },
+
+  // auth: {
+  //   strategies: {
+  //     local: {
+  //       endpoints: {
+  //         login: { url: '/auth/signin', method: 'post', propertyName: 'token' },
+  //         logout: { url: '/auth/logout', method: 'post' },
+  //         user: { url: '/auth/me', method: 'get', propertyName: 'user' }
+  //       },
+  //       // tokenRequired: true,
+  //       // tokenType: 'bearer',
+  //       // globalToken: true,
+  //       // autoFetchUser: true
+  //     }
+  //   }
+  // },
+
+
+
+
+  toast: {
+    position: 'top-right',
+    duration: 2000
+  },
+
+  loading: {
+    name: 'chasing-dots',
+    color: '#ff5638',
+    background: 'white',
+    height: '4px'
+  },
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: true,
+      brands: true
+    }
+  },
+
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -104,7 +131,6 @@ export default {
     }
   },
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
 }
