@@ -64,25 +64,26 @@ export default {
   },
   methods: {
     signin() {
-      axios
-        .post(`${baseApiUrl}/auth/signin`, this.user)
+      axios.post(`${baseApiUrl}/auth/signin`, this.user)
         .then(res => {
           this.$store.commit("setUser", res.data);
           localStorage.setItem(userKey, JSON.stringify(res.data));
           this.$router.push({ path: "/admin" });
         })
-        .catch(showError);
+        .catch(
+          console.log(Response)
+        );
+        // .catch(showError);
     },
-    signup() {
-      axios
-        .post(`${baseApiUrl}/auth/signup`, this.user)
-        .then(() => {
-          this.$toasted.global.register();
-          this.user = {};
-          this.showSignup = false;
-        })
-        .catch(showError);
-    }
+    // signup() {
+    //   axios.post(`${baseApiUrl}/auth/signup`, this.user)
+    //     .then(() => {
+    //       this.$toasted.global.register();
+    //       this.user = {};
+    //       this.showSignup = false;
+    //     })
+    //     .catch(showError);
+    // }
   }
 };
 </script>
