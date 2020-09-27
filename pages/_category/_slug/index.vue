@@ -277,6 +277,11 @@ export default {
   mixins: [_banners, _calls, _mostAccessed],
   layout: "public",
 
+  loading: {
+    color: 'blue',
+    height: '5px'
+  },
+
   components: {
     "ads-banners": AdsBanners,
     "call-main-image-title": CallMainImageTitle,
@@ -315,7 +320,7 @@ export default {
 
   head() {
     return {
-      title: this.article.title,
+      title: this.article.title + ' |',
       meta: [
         { hid: 'description', name: 'description', content: this.article.subtitle },
         { hid: 'keywords', name: 'keywords', content: this.article.tags },

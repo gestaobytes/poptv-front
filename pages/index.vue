@@ -978,6 +978,11 @@ export default {
       photo: "https://storage.googleapis.com/ogirassol/photos/",
       thumb: "https://storage.googleapis.com/ogirassol/thumbs/"
     };
-  }
+  },
+  head() {
+    return {
+      title: 'POP',
+    };
+  },
 };
 </script>
