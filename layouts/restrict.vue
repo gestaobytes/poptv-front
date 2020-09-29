@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <v-app>
-      <Loading v-if="validatingToken" />
-      <div v-else id="inspire">
-      <!-- <div > -->
+      <!-- <Loading v-if="validatingToken" />
+      <div v-else id="inspire"> -->
+      <div >
         <v-card>
           <v-app-bar dark dense>
             <v-toolbar-title>
