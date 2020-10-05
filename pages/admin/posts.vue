@@ -137,7 +137,6 @@
                 <v-col cols="12" xs="12" sm="7" md="7" lg="7" xl="7">
                   <text-field-form
                     counter
-                    :rules="rulesTitleAdapter"
                     label="Título Adaptado*"
                     v-model="dataOfTable.titleadapter"
                   />
@@ -349,10 +348,7 @@ export default {
         { value: "s", text: "SIM" },
         { value: "N", text: "NÃO" },
       ],
-      rulesTitleAdapter: [
-        (min) => min.length > 72 || "Muito curto",
-        (max) => max.length < 80 || "Muito Longo"
-      ],
+     
 
       // editorSettings: [
       //   [{ list: "ordered" }, { list: "bullet" }],
