@@ -7,12 +7,12 @@
     <!-- exibição dos dados em tabela -->
     <custom-table :headTH="tableHead" :registers="registersOfTable">
       <tr v-for="data in registersOfTable" :key="data.id" slot="registers-table">
-        <td>
+        <!-- <td>
           <v-avatar class="ma-3" @click="toggleShow(data)">
             <img :src="storageGoogle+folderStorage+data.image" v-if="data.image != '' && data.image != null" />
             <img src="@/static/notImageUser.png" v-else />
           </v-avatar>
-        </td>
+        </td> -->
 
         <td>{{ data.name }} <br/> {{ data.type }}</td>
         <td>{{ data.phone }} | {{ data.cellphone }}<br />{{ data.email }}</td>
@@ -218,7 +218,7 @@
         </v-card>
       </v-dialog>
 
-      <v-dialog v-model="dialogImage" fullscreen hide-overlay transition="dialog-bottom-transition">
+      <!-- <v-dialog v-model="dialogImage" fullscreen hide-overlay transition="dialog-bottom-transition">
         <v-card>
           <form ref="dataForm">
             <v-toolbar dark color="cyan">
@@ -234,10 +234,8 @@
             </v-layout>
           </form>
         </v-card>
-      </v-dialog>
-    </v-layout>
-
-    <my-upload
+      </v-dialog> -->
+    <!-- <my-upload
       field="img"
       @crop-success="cropSuccess"
       @crop-upload-fail="cropUploadFail"
@@ -248,7 +246,9 @@
       :params="params"
       :headers="headers"
       img-format="png"
-    ></my-upload>
+    ></my-upload> -->
+    </v-layout>
+
 
     <div class="text-xs-center mt-5">
       <v-pagination color="cyan" v-if="paginate > 1" v-model="page" :length="paginate" :total-visible="7" circle />
@@ -264,7 +264,7 @@ import crud from "@/components/admin/crud";
 import { baseApiUrlAdmin, showError } from "@/global";
 import axios from "axios";
 
-import myUpload from "vue-image-crop-upload";
+// import myUpload from "vue-image-crop-upload";
 
 import ButtonAdd from "@/components/admin/buttons/button-add.vue";
 import ButtonEdit from "@/components/admin/buttons/button-edit.vue";
@@ -296,7 +296,7 @@ export default {
     // "text-field-form": TextFieldForm,
     // "select-field-form": SelectFieldForm,
     // "select-autocomplete-form": SelectAutocompleteForm,
-    "my-upload": myUpload,
+    // "my-upload": myUpload,
   },
 
   data: function () {
@@ -305,7 +305,7 @@ export default {
       titleModal: "CADASTRAR USUÁRIOS",
       titlePage: "USUÁRIOS",
       folderStorage:"users/",
-      tableHead: ["","Usuário","Contatos","Papéis",""],
+      tableHead: ["Usuário","Contatos","Papéis"],
       permissionsUser: {},
       usersType: [
         { value: "Colaborador", text: "Colaborador" },
@@ -326,12 +326,13 @@ export default {
         { value: "OFF", text: "INATIVO" },
       ],
 
+
+      /** image crop a partir 
       dialogImage: false,
       dialogPhoto: false,
       imageUserID: "",
       image: "",
 
-      /** image crop a partir daqui */
       show: false,
       params: {
         token: "123456798",
@@ -341,6 +342,7 @@ export default {
         smail: "*_~",
       },
       imgDataUrl: "",
+      */
     };
   },
 
@@ -431,6 +433,9 @@ export default {
       });
     },
 
+
+    /** crop image 
+
     hideModalPhoto() {
       this.dialogPhoto = false;
     },
@@ -440,7 +445,7 @@ export default {
       this.dialogImage = false;
     },
 
-    /** crop image */
+
     toggleShow(item) {
       this.show = !this.show;
       this.imageUserID = item.id;
@@ -476,6 +481,8 @@ export default {
       console.log(status);
       console.log("field: " + field);
     },
+    */
+
   },
 
   mounted() {
