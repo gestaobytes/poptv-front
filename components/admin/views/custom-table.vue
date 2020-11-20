@@ -1,12 +1,12 @@
 <template>
   <v-simple-table class="elevation-3" dense>
     <thead>
-      <th v-for="head in headTH" :key="head">
-        <h3 class="cyan--text">{{head}}</h3>
+      <th style="border-bottom: 1px solid #00bcd4" v-for="head in headTH" :key="head">
+        <h4 class="cyan--text text-left mx-4 my-1 font-weight-light">{{head}}</h4>
       </th>
-      <th></th>
+      <th style="border-bottom: 1px solid #00bcd4" width="120px" ></th>
     </thead>
-    <tbody>
+    <tbody class="pt-5">
       <slot name="registers-table"></slot>
     </tbody>
   </v-simple-table>
