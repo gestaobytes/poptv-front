@@ -124,8 +124,8 @@ export default {
     return {
       pageApi: "blogs",
       pageApiCategories: "categories",
-      titleModal: "CADASTRAR BLOGS E COLUNAS",
-      titlePage: "BLOGS E COLUNAS",
+      titleModal: "CADASTRAR BLOGS & COLUNAS",
+      titlePage: "BLOGS & COLUNAS",
       categories: [],
       dialogCategory: false,
       tableHead: ["DESCRIÇÃO"],
@@ -191,7 +191,7 @@ export default {
     },
 
     reset() {
-      this.titleModal = "CADASTRAR BLOGS E COLUNAS";
+      this.titleModal = "CADASTRAR BLOGS & COLUNAS";
       // this.$refs.form.reset();
       this.dataOfTable = {};
       this.loadRegistersOfTable();
