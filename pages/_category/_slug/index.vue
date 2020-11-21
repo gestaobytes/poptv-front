@@ -21,7 +21,8 @@
 
                 <h2 class="headline mt-3">{{article.subtitle}}</h2>
 
-                <!-- <h5 class="title-sharing mt-4 mb-4">
+                    <!-- :urlLocal="urlComplete" -->
+                <h5 class="title-sharing mt-4 mb-4">
                   <button-sharing :urlLocal="urlComplete" socialMedia="facebook" />
                   <button-sharing
                     :urlLocal="urlComplete"
@@ -30,7 +31,7 @@
                     socialMedia="twitter"
                   />
                   <button-sharing :urlLocal="urlComplete" socialMedia="whatsapp" />
-                </h5>-->
+                </h5>
 
                 <div
                   class="mt-5 mb-5 pa-5"
@@ -271,7 +272,7 @@ import MostAccessed from "@/components/public/most-accessed";
 import TitleIcon from "@/components/public/title-icon";
 import TitleListedNews from "@/components/public/title-listed-news";
 
-// import ButtonSharing from "@/components/public/button-sharing";
+import ButtonSharing from "@/components/public/button-sharing"; 
 
 export default {
   mixins: [_banners, _calls, _mostAccessed],
@@ -296,10 +297,10 @@ export default {
     "call-title-light": CallTitleLight,
     "most-accessed": MostAccessed,
     "title-icon": TitleIcon,
-    "title-listed-news": TitleListedNews
+    "title-listed-news": TitleListedNews,
     // "call-box-especial": CallBoxEspecial,
-    // "button-sharing": ButtonSharing,
     // "call-image-title-secondary": CallImageTitleSecondary,
+    "button-sharing": ButtonSharing
   },
 
   data: function() {
@@ -312,8 +313,8 @@ export default {
       urlTags: "",
       urlComplete: "",
       relatedNews: "",
-      photo: "https://storage.googleapis.com/ogirassol/photos/",
-      thumb: "https://storage.googleapis.com/ogirassol/thumbs/",
+      photo: "https://storage.googleapis.com/poptvnews/photos/",
+      thumb: "https://storage.googleapis.com/poptvnews/thumbs/",
       metaTags: ""
     };
   },
@@ -347,7 +348,9 @@ export default {
           this.tags = Array.from(tags);
           this.relatedNews = res.data.relatedNews;
           this.loadReactions();
-          this.urlComplete = window.location.href;
+          // this.urlComplete = window.location.href;
+          // this.urlComplete = `http://localhost:3000/${this.$route.params.category}/${this.$route.params.slug}`;
+          this.urlComplete = `http://poptvnews.com.br/${this.$route.params.category}/${this.$route.params.slug}`;
           console.log(this.article);
         });
     },
