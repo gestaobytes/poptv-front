@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row style="background-color: #ccc" class="mt-n3 mb-3">
+    <v-row style="background-color: #eee" class="mt-n3 mb-3">
       <v-col cols="12" xs="12" sm="4" md="4" lg="4" xl="4">
         <h1 class="display-1 font-weight-light mt-2">{{titlePage}}</h1>
         <v-spacer></v-spacer>
