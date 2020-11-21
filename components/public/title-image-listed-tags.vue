@@ -63,7 +63,7 @@ export default {
   name: "most-accessed",
   data: function () {
     return {
-      storageGoogle: "https://storage.googleapis.com/ogirassol/",
+      storageGoogle: "https://storage.googleapis.com/poptvnews/",
       folderStorage: "thumbs/",
     };
   },

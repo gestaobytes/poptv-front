@@ -975,8 +975,8 @@ export default {
   data: function() {
     return {
       urlTags: "",
-      photo: "https://storage.googleapis.com/ogirassol/photos/",
-      thumb: "https://storage.googleapis.com/ogirassol/thumbs/"
+      photo: "https://storage.googleapis.com/poptvnews/photos/",
+      thumb: "https://storage.googleapis.com/poptvnews/thumbs/"
     };
   },
   head() {

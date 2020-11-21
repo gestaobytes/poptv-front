@@ -17,7 +17,7 @@
               <template v-slot:activator="{ on }">
                 <v-btn icon v-on="on">
                   <v-avatar size="32px" v-if="imageUser != '' && imageUser != null">
-                    <img :src="'https://storage.googleapis.com/ogirassol/users/'+imageUser"/>
+                    <img :src="'https://storage.googleapis.com/poptvnews/users/'+imageUser"/>
                   </v-avatar>
                   <v-avatar size="32px" v-else>
                     <img src="@/static/notImageUser.png" />

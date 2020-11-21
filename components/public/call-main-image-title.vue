@@ -44,7 +44,7 @@ export default {
   props: ["fontData", "lazyData"],
   data: function () {
     return {
-      storageGoogle: "https://storage.googleapis.com/ogirassol/",
+      storageGoogle: "https://storage.googleapis.com/poptvnews/",
       photo: "photos/",
       thumb: "thumbs/",
     };

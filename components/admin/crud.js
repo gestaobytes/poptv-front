@@ -28,7 +28,7 @@ export default {
             fieldSearch: "",
             fieldDtsSearch: "",
             fieldDtfSearch: "",
-            storageGoogle: "https://storage.googleapis.com/ogirassol/",
+            storageGoogle: "https://storage.googleapis.com/poptvnews/",
             folderStorage: "",
         };
     },

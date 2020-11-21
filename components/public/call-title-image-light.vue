@@ -42,7 +42,7 @@ export default {
   data: function () {
     return {
       storageGoogle:
-        "https://storage.googleapis.com/ogirassol/",
+        "https://storage.googleapis.com/poptvnews/",
       folderStorage: "thumbs/",
     };
   },
