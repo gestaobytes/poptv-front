@@ -1,7 +1,7 @@
 import Vue from 'vue'
 export const userKey = '__UserKeyAplication'
-export const domainApi = 'http://poptvnews.local'
-// export const domainApi = 'http://poptvnews.gestaobytes.com'
+// export const domainApi = 'http://poptvnews.local'
+export const domainApi = 'http://poptvnews.gestaobytes.com'
 export const baseApiUrl = domainApi + '/api'
 export const versionApi = '/v1'
 export const baseApiUrlWithVersion = baseApiUrl + versionApi
