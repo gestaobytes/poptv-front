@@ -323,7 +323,7 @@ export default {
     "modal-light": ModalLight,
     "text-field-form": TextFieldForm,
     "select-autocomplete-form": SelectAutocompleteForm,
-    "select-field-form": SelectFieldForm,
+    "select-field-form": SelectFieldForm, 
   },
 
   data: function () {
@@ -334,6 +334,7 @@ export default {
       dialogPhoto: false,
       image: "",
       slug: "",
+      storageGoogle: "https://storage.googleapis.com/poptvnews/",
       folderStorage: "thumbs/",
       titleModal: "CADASTRAR POSTAGEM",
       titlePage: "POSTAGENS",
